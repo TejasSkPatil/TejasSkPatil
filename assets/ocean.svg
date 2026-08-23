@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 160" width="100%" height="160">
+  <style>
+    .bg { fill: #0b192c; }
+    .dot-0 { fill: #1e3e62; }
+    .dot-1 { fill: #008170; }
+    .dot-2 { fill: #00adb5; }
+    .dot-3 { fill: #38bdf8; }
+    .dot-4 { fill: #00fff5; }
+    
+    .snake-body {
+      fill: #ff9800;
+      rx: 3px;
+      ry: 3px;
+    }
+    .snake-head {
+      fill: #ffb703;
+      filter: drop-shadow(0 0 8px #ffb703);
+      rx: 3.5px;
+      ry: 3.5px;
+    }
+
+    @keyframes moveSnakeOcean {
+      0% { transform: translate(0px, 0px); }
+      25% { transform: translate(180px, 30px); }
+      50% { transform: translate(380px, -20px); }
+      75% { transform: translate(580px, 20px); }
+      100% { transform: translate(750px, 0px); }
+    }
+
+    .animated-snake {
+      animation: moveSnakeOcean 12s infinite alternate ease-in-out;
+    }
+  </style>
+
+  <rect width="100%" height="100%" class="bg" rx="10" />
+
+  <g transform="translate(25, 25)">
+    <pattern id="grid-dots-ocean" width="15" height="15" patternUnits="userSpaceOnUse">
+      <rect width="11" height="11" rx="2" class="dot-0" />
+    </pattern>
+    <rect width="780" height="105" fill="url(#grid-dots-ocean)" />
+    
+    <!-- Ocean Dots -->
+    <rect x="30" y="15" width="11" height="11" rx="2" class="dot-2" />
+    <rect x="45" y="30" width="11" height="11" rx="2" class="dot-3" />
+    <rect x="75" y="60" width="11" height="11" rx="2" class="dot-1" />
+    <rect x="120" y="45" width="11" height="11" rx="2" class="dot-4" />
+    <rect x="180" y="75" width="11" height="11" rx="2" class="dot-2" />
+    <rect x="225" y="30" width="11" height="11" rx="2" class="dot-4" />
+    <rect x="315" y="15" width="11" height="11" rx="2" class="dot-3" />
+    <rect x="360" y="75" width="11" height="11" rx="2" class="dot-4" />
+    <rect x="450" y="60" width="11" height="11" rx="2" class="dot-4" />
+    <rect x="540" y="45" width="11" height="11" rx="2" class="dot-1" />
+    <rect x="585" y="75" width="11" height="11" rx="2" class="dot-4" />
+    <rect x="675" y="15" width="11" height="11" rx="2" class="dot-2" />
+    <rect x="720" y="60" width="11" height="11" rx="2" class="dot-4" />
+    <rect x="765" y="30" width="11" height="11" rx="2" class="dot-4" />
+
+    <g class="animated-snake">
+      <rect x="45" y="45" width="11" height="11" class="snake-head" />
+      <rect x="30" y="45" width="11" height="11" class="snake-body" />
+      <rect x="15" y="45" width="11" height="11" class="snake-body" opacity="0.8" />
+      <rect x="0" y="45" width="11" height="11" class="snake-body" opacity="0.6" />
+      <rect x="-15" y="45" width="11" height="11" class="snake-body" opacity="0.4" />
+    </g>
+  </g>
+</svg>

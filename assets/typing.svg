@@ -1,0 +1,38 @@
+<svg fill="none" viewBox="0 0 700 45" width="100%" height="45" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        .typing-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 45px;
+          font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, monospace;
+          font-size: 15px;
+          font-weight: 500;
+          color: #38bdf8;
+          letter-spacing: 0.5px;
+        }
+        .typed-text {
+          display: inline-block;
+          border-right: 2px solid #00f2fe;
+          white-space: nowrap;
+          overflow: hidden;
+          animation: typing 8s steps(55, end) infinite, blink 0.75s step-end infinite;
+          padding-right: 4px;
+        }
+        @keyframes typing {
+          0%, 10% { width: 0; }
+          45%, 70% { width: 100%; }
+          90%, 100% { width: 0; }
+        }
+        @keyframes blink {
+          50% { border-color: transparent; }
+        }
+      </style>
+      <div class="typing-wrapper">
+        <span class="typed-text">Full Stack Developer | AI/ML Builder | AgriTech Innovator | Problem Solver</span>
+      </div>
+    </div>
+  </foreignObject>
+</svg>

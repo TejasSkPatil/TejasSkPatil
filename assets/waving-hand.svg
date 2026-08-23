@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <style>
+    .wave-hand {
+      transform-origin: 70% 70%;
+      animation: wave-animation 2.2s infinite ease-in-out;
+    }
+    @keyframes wave-animation {
+      0% { transform: rotate(0deg); }
+      10% { transform: rotate(14deg); }
+      20% { transform: rotate(-8deg); }
+      30% { transform: rotate(14deg); }
+      40% { transform: rotate(-4deg); }
+      50% { transform: rotate(10deg); }
+      60% { transform: rotate(0deg); }
+      100% { transform: rotate(0deg); }
+    }
+  </style>
+  <g class="wave-hand">
+    <text x="50%" y="65%" font-size="34" text-anchor="middle" dominant-baseline="middle">👋</text>
+  </g>
+</svg>

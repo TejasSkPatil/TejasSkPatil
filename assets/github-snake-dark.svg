@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 160" width="100%" height="160">
+  <style>
+    .bg { fill: #0d1117; }
+    .dot-0 { fill: #161b22; }
+    .dot-1 { fill: #003366; }
+    .dot-2 { fill: #0052cc; }
+    .dot-3 { fill: #0099ff; }
+    .dot-4 { fill: #00d2ff; }
+    
+    .snake-body {
+      fill: #38bdf8;
+      rx: 3px;
+      ry: 3px;
+    }
+    .snake-head {
+      fill: #00f2fe;
+      filter: drop-shadow(0 0 6px #00f2fe);
+      rx: 3.5px;
+      ry: 3.5px;
+    }
+
+    @keyframes moveSnake {
+      0% { transform: translate(0px, 0px); }
+      20% { transform: translate(120px, 20px); }
+      40% { transform: translate(300px, -15px); }
+      60% { transform: translate(480px, 30px); }
+      80% { transform: translate(620px, 0px); }
+      100% { transform: translate(750px, 15px); }
+    }
+
+    .animated-snake {
+      animation: moveSnake 12s infinite alternate ease-in-out;
+    }
+  </style>
+
+  <rect width="100%" height="100%" class="bg" rx="10" />
+
+  <!-- Grid of dots -->
+  <g transform="translate(25, 25)">
+    <!-- Generating 52 columns x 7 rows -->
+    <!-- Sample cosmic dark dots -->
+    <g>
+      <!-- We render repeating grid pattern -->
+      <pattern id="grid-dots" width="15" height="15" patternUnits="userSpaceOnUse">
+        <rect width="11" height="11" rx="2" class="dot-0" />
+      </pattern>
+      <rect width="780" height="105" fill="url(#grid-dots)" />
+      
+      <!-- Random active bright dots -->
+      <rect x="30" y="15" width="11" height="11" rx="2" class="dot-2" />
+      <rect x="45" y="30" width="11" height="11" rx="2" class="dot-3" />
+      <rect x="75" y="60" width="11" height="11" rx="2" class="dot-1" />
+      <rect x="120" y="45" width="11" height="11" rx="2" class="dot-4" />
+      <rect x="135" y="15" width="11" height="11" rx="2" class="dot-3" />
+      <rect x="180" y="75" width="11" height="11" rx="2" class="dot-2" />
+      <rect x="225" y="30" width="11" height="11" rx="2" class="dot-4" />
+      <rect x="270" y="45" width="11" height="11" rx="2" class="dot-1" />
+      <rect x="315" y="15" width="11" height="11" rx="2" class="dot-3" />
+      <rect x="360" y="75" width="11" height="11" rx="2" class="dot-4" />
+      <rect x="405" y="30" width="11" height="11" rx="2" class="dot-2" />
+      <rect x="450" y="60" width="11" height="11" rx="2" class="dot-4" />
+      <rect x="495" y="15" width="11" height="11" rx="2" class="dot-3" />
+      <rect x="540" y="45" width="11" height="11" rx="2" class="dot-1" />
+      <rect x="585" y="75" width="11" height="11" rx="2" class="dot-4" />
+      <rect x="630" y="30" width="11" height="11" rx="2" class="dot-3" />
+      <rect x="675" y="15" width="11" height="11" rx="2" class="dot-2" />
+      <rect x="720" y="60" width="11" height="11" rx="2" class="dot-4" />
+      <rect x="750" y="45" width="11" height="11" rx="2" class="dot-3" />
+      <rect x="765" y="30" width="11" height="11" rx="2" class="dot-4" />
+    </g>
+
+    <!-- Animated Snake -->
+    <g class="animated-snake">
+      <rect x="45" y="45" width="11" height="11" class="snake-head" />
+      <rect x="30" y="45" width="11" height="11" class="snake-body" />
+      <rect x="15" y="45" width="11" height="11" class="snake-body" opacity="0.8" />
+      <rect x="0" y="45" width="11" height="11" class="snake-body" opacity="0.6" />
+      <rect x="-15" y="45" width="11" height="11" class="snake-body" opacity="0.4" />
+    </g>
+  </g>
+</svg>

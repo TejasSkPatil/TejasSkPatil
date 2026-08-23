@@ -1,0 +1,6 @@
+{
+  "name": "GitHub Profile README Builder",
+  "description": "Interactive GitHub Profile README builder and dark cosmic visual previewer based on Tejas S. Patil's projects and custom design layout.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
