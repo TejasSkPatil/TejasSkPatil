@@ -15,32 +15,51 @@ export const HeaderBanner: React.FC<HeaderBannerProps> = ({
   subtitle3,
 }) => {
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-indigo-500/20 bg-[#0d121f]/90 p-8 md:p-12 text-center shadow-2xl backdrop-blur-md">
-      {/* Background radial glow */}
-      <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-gradient-to-br from-cyan-500/15 via-purple-600/15 to-indigo-600/10 blur-3xl pointer-events-none rounded-full" />
+    <div className="relative overflow-hidden rounded-2xl border border-sky-500/15 bg-[#080c17] p-8 md:p-14 text-center shadow-2xl backdrop-blur-md">
+      {/* Ambient background glow left & right */}
+      <div className="absolute top-1/4 -left-12 w-72 h-72 bg-cyan-600/15 blur-3xl pointer-events-none rounded-full" />
+      <div className="absolute top-1/6 -right-12 w-72 h-72 bg-purple-600/15 blur-3xl pointer-events-none rounded-full" />
 
       {/* Floating code symbol decorations */}
-      <div className="absolute top-6 left-8 text-slate-700/40 text-xl font-mono select-none pointer-events-none">{`{ }`}</div>
-      <div className="absolute top-6 right-8 text-slate-700/40 text-xl font-mono select-none pointer-events-none">{`[ ]`}</div>
-      <div className="absolute bottom-8 left-12 text-slate-700/40 text-xl font-mono select-none pointer-events-none">{`( )`}</div>
-      <div className="absolute top-4 right-6 p-2 rounded-lg border border-slate-800 bg-slate-900/60 text-slate-500 hover:text-slate-300 transition-colors cursor-pointer text-xs font-mono">
+      <div className="absolute top-8 left-12 text-slate-700/50 text-xl font-mono select-none pointer-events-none hidden sm:block">
+        {`{ }`}
+      </div>
+      <div className="absolute top-8 right-16 text-slate-700/50 text-xl font-mono select-none pointer-events-none hidden sm:block">
+        {`[ ]`}
+      </div>
+      <div className="absolute bottom-10 left-16 text-slate-700/50 text-lg font-mono select-none pointer-events-none hidden sm:block">
+        {`( )`}
+      </div>
+      <div className="absolute bottom-10 right-20 text-slate-700/50 text-lg font-mono select-none pointer-events-none hidden sm:block">
+        {`</>`}
+      </div>
+
+      {/* Center Large Code Chevron Watermark */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-7xl sm:text-9xl md:text-[160px] font-mono font-bold text-slate-800/25 tracking-tighter select-none pointer-events-none z-0">
+        {`</>`}
+      </div>
+
+      {/* Top right corner badge */}
+      <div className="absolute top-4 right-5 px-2.5 py-1 rounded-lg border border-slate-800 bg-slate-900/80 text-slate-500 hover:text-slate-300 transition-colors text-xs font-mono select-none">
         {`</>`}
       </div>
 
       {/* Main Full Name Heading */}
-      <h1 className="relative text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-400 via-purple-300 to-indigo-300 bg-clip-text text-transparent drop-shadow-sm mb-4">
-        {fullName}
-      </h1>
+      <div className="relative z-10">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[48px] font-extrabold tracking-tight bg-gradient-to-r from-[#58a6ff] via-[#bc8cff] to-[#39d353] bg-clip-text text-transparent drop-shadow-md mb-4">
+          {fullName}
+        </h1>
 
-      {/* Subtitle lines */}
-      <div className="relative space-y-1 text-sm md:text-base text-slate-300/90 font-mono tracking-wide max-w-xl mx-auto">
-        <p>{subtitle1}</p>
-        <p>{subtitle2}</p>
-        <p className="text-cyan-400/90 font-medium">{subtitle3}</p>
+        {/* Subtitle lines */}
+        <div className="space-y-1 text-sm sm:text-base text-slate-400 font-mono tracking-wide max-w-xl mx-auto">
+          <p>{subtitle1}</p>
+          <p>{subtitle2}</p>
+          <p className="text-[#38bdf8] font-semibold pt-1">{subtitle3}</p>
+        </div>
+
+        {/* Subtle bottom divider */}
+        <div className="mt-8 w-64 h-[1px] mx-auto bg-gradient-to-r from-transparent via-sky-500/40 to-transparent" />
       </div>
-
-      {/* Subtle bottom divider */}
-      <div className="relative mt-8 w-48 h-[1px] mx-auto bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
     </div>
   );
 };

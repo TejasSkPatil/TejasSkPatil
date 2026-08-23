@@ -1,118 +1,222 @@
-<svg fill="none" viewBox="0 0 1200 320" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+<svg fill="none" viewBox="0 0 1200 480" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
   <foreignObject width="100%" height="100%">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         .hero-container {
           width: 100%;
-          height: 320px;
-          background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #090d16 60%, #030712 100%);
-          border-radius: 16px;
-          border: 1px solid rgba(56, 189, 248, 0.2);
+          height: 480px;
+          background: #080c17;
+          border-radius: 24px;
+          border: 1px solid rgba(56, 189, 248, 0.15);
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
           position: relative;
           overflow: hidden;
-          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+          box-sizing: border-box;
         }
 
-        .stars-bg {
+        /* Ambient Glow Spheres */
+        .ambient-left {
+          position: absolute;
+          width: 450px;
+          height: 450px;
+          background: radial-gradient(circle, rgba(14, 116, 144, 0.22) 0%, rgba(2, 132, 199, 0.1) 45%, transparent 70%);
+          filter: blur(50px);
+          top: 15%;
+          left: 5%;
+          pointer-events: none;
+        }
+
+        .ambient-right {
+          position: absolute;
+          width: 450px;
+          height: 450px;
+          background: radial-gradient(circle, rgba(126, 34, 206, 0.2) 0%, rgba(79, 70, 229, 0.08) 45%, transparent 70%);
+          filter: blur(50px);
+          top: 10%;
+          right: 5%;
+          pointer-events: none;
+        }
+
+        /* Twinkling ambient dots */
+        .stars {
           position: absolute;
           inset: 0;
-          background-image: 
-            radial-gradient(1.5px 1.5px at 40px 60px, #38bdf8 50%, transparent 100%),
-            radial-gradient(1.5px 1.5px at 150px 220px, #818cf8 50%, transparent 100%),
-            radial-gradient(2px 2px at 300px 90px, #ffffff 50%, transparent 100%),
-            radial-gradient(1.5px 1.5px at 450px 260px, #06b6d4 50%, transparent 100%),
-            radial-gradient(2px 2px at 600px 40px, #38bdf8 50%, transparent 100%),
-            radial-gradient(1px 1px at 750px 280px, #c084fc 50%, transparent 100%),
-            radial-gradient(2.5px 2.5px at 900px 120px, #00f2fe 50%, transparent 100%),
-            radial-gradient(1.5px 1.5px at 1050px 240px, #818cf8 50%, transparent 100%),
-            radial-gradient(2px 2px at 1150px 70px, #ffffff 50%, transparent 100%);
-          opacity: 0.7;
-          animation: twinkle 4s ease-in-out infinite alternate;
+          background-image:
+            radial-gradient(1.5px 1.5px at 120px 200px, #38bdf8 60%, transparent 100%),
+            radial-gradient(1px 1px at 300px 300px, #c084fc 60%, transparent 100%),
+            radial-gradient(1.5px 1.5px at 450px 100px, #6ee7b7 60%, transparent 100%),
+            radial-gradient(2px 2px at 700px 360px, #38bdf8 60%, transparent 100%),
+            radial-gradient(1.5px 1.5px at 900px 310px, #c084fc 60%, transparent 100%),
+            radial-gradient(2px 2px at 1010px 240px, #38bdf8 60%, transparent 100%),
+            radial-gradient(1.5px 1.5px at 1050px 100px, #6ee7b7 60%, transparent 100%),
+            radial-gradient(1px 1px at 500px 70px, #ffffff 60%, transparent 100%);
+          opacity: 0.85;
+          animation: pulseStars 5s ease-in-out infinite alternate;
         }
 
-        @keyframes twinkle {
-          0% { opacity: 0.4; }
-          100% { opacity: 0.9; }
+        @keyframes pulseStars {
+          0% { opacity: 0.5; }
+          100% { opacity: 1; }
         }
 
-        .glow-circle {
+        /* Large Central Code Chevron Watermark */
+        .center-watermark {
           position: absolute;
-          width: 400px;
-          height: 200px;
-          background: radial-gradient(circle, rgba(0, 210, 255, 0.25) 0%, rgba(99, 102, 241, 0.15) 50%, transparent 70%);
-          filter: blur(40px);
-          top: -50px;
+          top: 48%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 210px;
+          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+          font-weight: 700;
+          color: rgba(30, 41, 59, 0.4);
+          letter-spacing: -20px;
+          user-select: none;
+          pointer-events: none;
+          z-index: 1;
         }
 
-        .name-title {
-          font-size: 46px;
-          font-weight: 900;
+        /* Floating Code Symbols */
+        .symbol-tl {
+          position: absolute;
+          top: 25%;
+          left: 26%;
+          font-family: ui-monospace, SFMono-Regular, monospace;
+          font-size: 26px;
+          color: rgba(71, 85, 105, 0.35);
+          font-weight: 500;
+          user-select: none;
+        }
+
+        .symbol-tr {
+          position: absolute;
+          top: 25%;
+          right: 26%;
+          font-family: ui-monospace, SFMono-Regular, monospace;
+          font-size: 26px;
+          color: rgba(71, 85, 105, 0.35);
+          font-weight: 500;
+          user-select: none;
+        }
+
+        .symbol-bl {
+          position: absolute;
+          bottom: 28%;
+          left: 28%;
+          font-family: ui-monospace, SFMono-Regular, monospace;
+          font-size: 22px;
+          color: rgba(71, 85, 105, 0.3);
+          font-weight: 500;
+          user-select: none;
+        }
+
+        .symbol-br {
+          position: absolute;
+          bottom: 28%;
+          right: 28%;
+          font-family: ui-monospace, SFMono-Regular, monospace;
+          font-size: 22px;
+          color: rgba(71, 85, 105, 0.3);
+          font-weight: 500;
+          user-select: none;
+        }
+
+        .corner-badge {
+          position: absolute;
+          top: 28px;
+          right: 32px;
+          padding: 6px 12px;
+          border-radius: 8px;
+          border: 1px solid rgba(56, 189, 248, 0.2);
+          background: rgba(15, 23, 42, 0.6);
+          color: #475569;
+          font-family: ui-monospace, SFMono-Regular, monospace;
+          font-size: 14px;
+          font-weight: 600;
+        }
+
+        /* Central Typography */
+        .content-wrap {
+          position: relative;
+          z-index: 10;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .name-heading {
+          font-size: 52px;
+          font-weight: 800;
           letter-spacing: -0.5px;
-          margin: 0 0 10px 0;
-          background: linear-gradient(135deg, #ffffff 30%, #38bdf8 70%, #818cf8 100%);
+          margin: 0 0 16px 0;
+          background: linear-gradient(90deg, #58a6ff 0%, #bc8cff 50%, #39d353 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
-          text-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
-          z-index: 10;
+          filter: drop-shadow(0 0 25px rgba(88, 166, 255, 0.25));
         }
 
-        .subtitle-box {
-          background: rgba(15, 23, 42, 0.85);
-          border: 1px solid rgba(56, 189, 248, 0.3);
-          border-radius: 10px;
-          padding: 8px 24px;
-          backdrop-filter: blur(10px);
-          z-index: 10;
-          display: flex;
-          align-items: center;
-          gap: 16px;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        .sub-item {
-          font-size: 14px;
-          font-weight: 500;
+        .sub-line-1 {
+          font-size: 18px;
           color: #94a3b8;
-          display: flex;
-          align-items: center;
-          gap: 6px;
-        }
-
-        .sub-item b {
-          color: #38bdf8;
-        }
-
-        .dot-sep {
-          color: #475569;
-          font-size: 12px;
-        }
-
-        .tagline {
-          margin-top: 14px;
-          font-size: 13px;
-          color: #64748b;
           font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-          letter-spacing: 0.5px;
-          z-index: 10;
+          margin: 0 0 6px 0;
+          letter-spacing: 0.2px;
+        }
+
+        .sub-line-2 {
+          font-size: 18px;
+          color: #94a3b8;
+          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+          margin: 0 0 8px 0;
+          letter-spacing: 0.2px;
+        }
+
+        .sub-line-3 {
+          font-size: 18px;
+          color: #38bdf8;
+          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+          font-weight: 600;
+          margin: 0 0 28px 0;
+          letter-spacing: 0.3px;
+        }
+
+        .bottom-divider {
+          width: 320px;
+          height: 1px;
+          background: linear-gradient(90deg, transparent 0%, rgba(56, 189, 248, 0.4) 50%, transparent 100%);
         }
       </style>
+
       <div class="hero-container">
-        <div class="stars-bg"></div>
-        <div class="glow-circle"></div>
-        <h1 class="name-title">Tejas S. Patil</h1>
-        <div class="subtitle-box">
-          <div class="sub-item">⚡ <b>Building Software</b></div>
-          <div class="dot-sep">•</div>
-          <div class="sub-item">🎨 <b>Creating Experiences</b></div>
-          <div class="dot-sep">•</div>
-          <div class="sub-item">🌱 <b>AgriTech & AI</b></div>
+        <div class="ambient-left"></div>
+        <div class="ambient-right"></div>
+        <div class="stars"></div>
+
+        <!-- Floating Code Symbols -->
+        <div class="symbol-tl">{ }</div>
+        <div class="symbol-tr">[ ]</div>
+        <div class="symbol-bl">( )</div>
+        <div class="symbol-br">&lt;/&gt;</div>
+
+        <!-- Center Watermark -->
+        <div class="center-watermark">&lt; / &gt;</div>
+
+        <!-- Top Right Badge -->
+        <div class="corner-badge">&lt;/&gt;</div>
+
+        <!-- Center Name & Text -->
+        <div class="content-wrap">
+          <h1 class="name-heading">Patil Tejas Sandeshkumar</h1>
+          <div class="sub-line-1">Building software.</div>
+          <div class="sub-line-2">Creating beautiful experiences.</div>
+          <div class="sub-line-3">Always learning. Never stopping.</div>
+          <div class="bottom-divider"></div>
         </div>
-        <div class="tagline">&lt; Always learning. Never stopping. /&gt;</div>
       </div>
     </div>
   </foreignObject>

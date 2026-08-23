@@ -2,7 +2,7 @@ import { ProfileData } from '../types';
 
 export const TEJAS_PROFILE: ProfileData = {
   githubUsername: 'TejasSkPatil',
-  fullName: 'Tejas S. Patil',
+  fullName: 'Patil Tejas Sandeshkumar',
   tagline: 'Building software. Creating beautiful experiences. Always learning. Never stopping.',
   subtitle1: 'Building software.',
   subtitle2: 'Creating beautiful experiences.',
